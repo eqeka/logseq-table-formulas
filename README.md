@@ -48,6 +48,32 @@ Done. Open any page with a table and formulas just work.
 - Numbers like `12.5`, `12,5`, `1 000` and `50%` are all understood
 - Errors are shown right in the cell: `#DIV/0!`, `#NAME?`
 
+## Formula cheat sheet
+
+Never used spreadsheet formulas? Here's most of what you'll ever need.
+Examples assume numbers are in column B, rows 2 to 5.
+
+| Formula | What it does |
+|---------|--------------|
+| `=B2+B3` | add two cells (also `-`, `*`, `/`) |
+| `=(B2+B3)*2` | parentheses work as usual |
+| `=SUM(B2:B5)` | add up a whole range |
+| `=SUM(B2:B5)-B4` | mix functions and math freely |
+| `=AVERAGE(B2:B5)` | average of a range |
+| `=MIN(B2:B5)` / `=MAX(B2:B5)` | smallest / largest value |
+| `=COUNT(B2:B5)` | how many numbers are in the range |
+| `=ROUND(B2/3, 2)` | round to 2 decimal places |
+| `=B2*15%` | percentages just work |
+| `=IF(B2>100, "too much", "ok")` | show one thing or another based on a condition |
+| `=SUMIF(A2:A5, "Food", B2:B5)` | sum only the rows where column A says "Food" |
+| `=COUNTIF(A2:A5, "Food")` | count the rows where column A says "Food" |
+| `=A2&" / "&A3` | glue text together |
+
+`B2:B5` means "cells B2 through B5". One thing to keep in mind: don't make a
+range include the cell the formula itself is in — that's a circular
+reference and you'll get `#CYCLE!`. So a total at the bottom of a column
+should sum the rows above it, like the `=SUM(B2:B5)` in row 6 does.
+
 Small print: each table is calculated on its own (no references between
 tables), function names are English, and inside a formula the decimal
 separator is a dot — `=ROUND(B2/3, 2)`.
