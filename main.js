@@ -1,5 +1,5 @@
 /**
- * Table Formulas — Excel-like formulas in Logseq markdown tables.
+ * Table Formulas — spreadsheet formulas in Logseq markdown tables.
  *
  * How it works: the plugin watches the *rendered* page (not the editor),
  * finds tables, feeds each one into HyperFormula and appends the computed
