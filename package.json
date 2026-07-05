@@ -1,7 +1,7 @@
 {
   "name": "logseq-table-formulas",
   "version": "0.1.0",
-  "description": "Excel-like formulas in Logseq markdown tables. Write =SUM(A1:A3) in a cell and see the result rendered next to it.",
+  "description": "Spreadsheet formulas in Logseq markdown tables. Write =SUM(A1:A3) in a cell and see the result rendered next to it.",
   "main": "index.html",
   "author": "Aleksandr Dmitriuk",
   "repository": "https://github.com/eqeka/logseq-table-formulas",

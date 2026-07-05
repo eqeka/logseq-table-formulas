@@ -1,7 +1,7 @@
 # Table Formulas for Logseq
 
-Excel formulas in your Logseq tables. Type a formula in a cell — see the
-answer right next to it.
+Spreadsheet formulas in your Logseq tables. Type a formula in a cell — see
+the answer right next to it.
 
 ![Table Formulas in action](./screenshot.png)
 
@@ -41,12 +41,12 @@ Done. Open any page with a table and formulas just work.
 
 - Start a cell with `=` — that's a formula: `=B2*C2`, `=SUM(A2:A10)`,
   `=IF(C2>100, "yes", "no")`
-- Cells are addressed like in Excel: **A1 is the top-left cell, the header
-  row counts as row 1**
-- Almost all Excel functions work (about 400 of them): SUM, AVERAGE, IF,
-  COUNT, MIN, MAX, ROUND, VLOOKUP and so on
+- Cells are addressed the usual spreadsheet way: **A1 is the top-left cell,
+  the header row counts as row 1**
+- About 400 functions are supported: SUM, AVERAGE, IF, COUNT, MIN, MAX,
+  ROUND, VLOOKUP and so on
 - Numbers like `12.5`, `12,5`, `1 000` and `50%` are all understood
-- Errors look like in Excel: `#DIV/0!`, `#NAME?`
+- Errors are shown right in the cell: `#DIV/0!`, `#NAME?`
 
 Small print: each table is calculated on its own (no references between
 tables), function names are English, and inside a formula the decimal
