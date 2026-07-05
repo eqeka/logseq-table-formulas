@@ -1,0 +1,23 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package plugin
+        run: zip -r logseq-table-formulas.zip index.html main.js package.json icon.svg README.md LICENSE vendor
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: logseq-table-formulas.zip

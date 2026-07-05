@@ -3,6 +3,8 @@
 Excel formulas in your Logseq tables. Type a formula in a cell — see the
 answer right next to it.
 
+![Table Formulas in action](./screenshot.png)
+
 ```
 | Item  | Price | Qty | Total       |
 |-------|-------|-----|-------------|
