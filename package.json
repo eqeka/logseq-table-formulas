@@ -4,6 +4,7 @@
   "description": "Excel-like formulas in Logseq markdown tables. Write =SUM(A1:A3) in a cell and see the result rendered next to it.",
   "main": "index.html",
   "author": "Aleksandr Dmitriuk",
+  "repository": "https://github.com/eqeka/logseq-table-formulas",
   "license": "GPL-3.0",
   "logseq": {
     "id": "logseq-table-formulas",

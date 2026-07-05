@@ -1,21 +1,7 @@
 # Table Formulas for Logseq
 
-Excel-like formulas in plain Logseq markdown tables. Type `=SUM(A1:A3)` in a
-cell — the computed result appears right next to it: `=SUM(A1:A3) = 42`.
-
-- **Non-destructive.** The plugin only decorates the *rendered* page. Your
-  markdown is never modified: click into the block and you see the plain
-  formula you typed — no cursor jumps, no hidden state.
-- **Works with all your existing tables.** Install the plugin and every table
-  in every page that contains `=...` cells gets results immediately.
-- **Real formula engine.** Powered by
-  [HyperFormula](https://hyperformula.handsontable.com/) — ~400 Excel
-  functions (SUM, AVERAGE, IF, COUNT, MIN, MAX, VLOOKUP, ROUND,
-  CONCATENATE…), ranges, arithmetic, nested formulas.
-
-## Usage
-
-A regular markdown table; a formula is any cell starting with `=`:
+Excel formulas in your Logseq tables. Type a formula in a cell — see the
+answer right next to it.
 
 ```
 | Item  | Price | Qty | Total       |
@@ -25,42 +11,46 @@ A regular markdown table; a formula is any cell starting with `=`:
 | Total |       |     | =SUM(D2:D3) |
 ```
 
-Addressing works like Excel: **A1 is the top-left cell of the table, the
-header row is row 1.** Columns are A, B, C…; rows are 1, 2, 3… Each table is
-computed independently (no cross-table references).
+renders as `=SUM(D2:D3) = 370`.
 
-Numbers in cells are recognized in the forms `1234`, `12.5`, `12,5`,
-`1 000`, `50%`. Errors are shown Excel-style: `#DIV/0!`, `#NAME?`, `#REF!`.
+Your notes are never touched — the plugin only adds the answer on screen.
+Click the block to edit and you'll see your plain formula, exactly as you
+typed it. Works with all tables you already have.
 
-## Installation
+## Install
 
-From the marketplace: `⋯ → Plugins → Marketplace → Table Formulas`.
+### From the Marketplace
 
-Manually:
+1. Open Logseq
+2. Click `⋯` (top right) → **Plugins** → **Marketplace**
+3. Search for **Table Formulas** and click **Install**
 
-1. In Logseq enable `Settings → Advanced → Developer mode`.
-2. `⋯ → Plugins → Load unpacked plugin` and pick this folder.
+Done. Open any page with a table and formulas just work.
 
-## Notes & limitations
+### Manually
 
-- Results are shown in view mode only; while editing a block you see the raw
-  formula (by design).
-- Function names are English, arguments are separated by commas, the decimal
-  separator inside a formula is a dot: `=ROUND(B2/3, 2)`.
+1. Download the latest `logseq-table-formulas.zip` from
+   [Releases](../../releases) and unzip it
+2. In Logseq go to **Settings → Advanced** and turn on **Developer mode**
+3. Click `⋯` → **Plugins** → **Load unpacked plugin**
+4. Pick the unzipped folder
+
+## How to use
+
+- Start a cell with `=` — that's a formula: `=B2*C2`, `=SUM(A2:A10)`,
+  `=IF(C2>100, "yes", "no")`
+- Cells are addressed like in Excel: **A1 is the top-left cell, the header
+  row counts as row 1**
+- Almost all Excel functions work (about 400 of them): SUM, AVERAGE, IF,
+  COUNT, MIN, MAX, ROUND, VLOOKUP and so on
+- Numbers like `12.5`, `12,5`, `1 000` and `50%` are all understood
+- Errors look like in Excel: `#DIV/0!`, `#NAME?`
+
+Small print: each table is calculated on its own (no references between
+tables), function names are English, and inside a formula the decimal
+separator is a dot — `=ROUND(B2/3, 2)`.
 
 ## License
 
-GPL-3.0 (required by the bundled HyperFormula engine, which is dual-licensed
-and used here under GPLv3).
-
----
-
-## По-русски
-
-Excel-формулы в обычных markdown-таблицах Logseq: пишешь в ячейке
-`=SUM(A1:A3)` — рядом появляется ответ. Исходный текст не изменяется, при
-редактировании блока видна обычная формула, курсор не сбивается. Работает со
-всеми существующими таблицами сразу после установки. Адресация как в Excel:
-A1 — левая верхняя ячейка, строка заголовков — строка 1. Каждая таблица
-считается независимо. Названия функций английские, десятичный разделитель в
-формуле — точка: `=ROUND(B2/3, 2)`.
+GPL-3.0. Formula engine:
+[HyperFormula](https://hyperformula.handsontable.com/).
